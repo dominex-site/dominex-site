@@ -137,6 +137,67 @@
       font-size: 14px;
     }
 
+
+    .typical-section {
+      background: radial-gradient(circle at 78% 20%, rgba(216,166,66,.11), transparent 34%), #0b0b0b;
+      border-top: 1px solid rgba(255,255,255,.08);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .typical-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 34px;
+    }
+
+    .typical-card {
+      padding: 28px;
+      border-radius: 26px;
+      border: 1px solid rgba(255,255,255,.1);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.025));
+      box-shadow: 0 22px 60px rgba(0,0,0,.2);
+    }
+
+    .typical-card h3 {
+      font-size: 24px;
+      margin-bottom: 18px;
+      color: var(--text);
+    }
+
+    .typical-power {
+      display: block;
+      color: var(--gold-light);
+      font-size: 30px;
+      line-height: 1;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    .typical-battery {
+      display: block;
+      color: #ededed;
+      font-size: 17px;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .typical-card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .typical-note {
+      margin-top: 26px;
+      padding: 20px 24px;
+      border-radius: 22px;
+      border: 1px solid rgba(216,166,66,.2);
+      background: rgba(216,166,66,.07);
+      color: #dedede;
+      max-width: 1050px;
+      font-size: 16px;
+    }
+
     .partners-section{background:#080808;border-top:1px solid rgba(255,255,255,.08)}
     .partners-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:36px}
     .partner-logo{min-height:110px;display:flex;align-items:center;justify-content:center;padding:22px;border-radius:24px;border:1px solid rgba(255,255,255,.08);background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));transition:.25s ease}
@@ -194,7 +255,7 @@
 
     @media(max-width:1100px){
       .nav-links{gap:16px;font-size:14px}.logo img{width:165px}
-      .business-benefits-grid,.benefits-grid,.partners-grid,.industry-grid{grid-template-columns:repeat(2,1fr)}
+      .business-benefits-grid,.benefits-grid,.partners-grid,.industry-grid,.typical-grid{grid-template-columns:repeat(2,1fr)}
       .credit-grid{grid-template-columns:1fr}.credit-card{grid-template-columns:.8fr 1.2fr}.credit-note{grid-template-columns:1fr;text-align:center}
       .audience-grid{grid-template-columns:repeat(3,1fr)}.hero-stats{grid-template-columns:repeat(2,1fr)}
     }
@@ -211,7 +272,7 @@
       .hero{padding-top:118px;min-height:auto}.hero-content{padding:70px 0 46px}
       .hero-fast{width:100%;justify-content:center;font-size:14px;padding:12px 16px;margin-bottom:28px}
       h1{font-size:clamp(38px,13vw,54px);letter-spacing:-1.5px}
-      .hero-stats,.problem-grid,.benefits-grid,.business-benefits-grid,.partners-grid,.industry-grid,.credit-grid,.cases-grid,.steps-grid,.audience-grid,.lead-wrap{grid-template-columns:1fr}
+      .hero-stats,.problem-grid,.benefits-grid,.business-benefits-grid,.partners-grid,.industry-grid,.typical-grid,.credit-grid,.cases-grid,.steps-grid,.audience-grid,.lead-wrap{grid-template-columns:1fr}
       section{padding:64px 0}.business-benefits{padding:56px 0}.case-card img{height:220px}
       .partner-logo{min-height:90px;padding:18px}.partner-logo img{max-height:42px}
       .credit-card{grid-template-columns:1fr;padding:22px}.credit-card img{height:220px}.credit-note{padding:22px;font-size:16px}.credit-note .btn{width:100%}
@@ -253,6 +314,7 @@
       <nav class="nav-links">
         <a href="#solutions">Рішення</a>
         <a href="#industries">Галузі</a>
+        <a href="#typical">Типові рішення</a>
         <a href="#cases">Об’єкти</a>
         <a href="#process">Як працюємо</a>
         <a href="#credit">Кредитування</a>
@@ -285,8 +347,8 @@
     <section class="hero">
       <div class="container hero-content">
         <div class="badge">Працюємо з 2015 року · 300+ реалізованих об'єктів</div>
-        <h1>ESS та резервна енергія — <span>бізнес без зупинок</span></h1>
-        <p>Встановлюємо системи накопичення енергії, резервного живлення та сонячні електростанції для дому і бізнесу. Допомагаємо працювати стабільно навіть при відключеннях.</p>
+        <h1>Сонячні електростанції та ESS — <span>енергія під контролем</span></h1>
+        <p>Встановлюємо сонячні електростанції, ESS, акумулятори та системи резервного живлення для дому і бізнесу. Допомагаємо зменшувати витрати та працювати стабільно навіть при відключеннях.</p>
         <div class="hero-fast">⚡ Виїзд інженера на об’єкт за 24 години</div>
         <div class="hero-stats">
           <div class="stat"><strong>до 70%</strong><small>економії на електроенергії</small></div>
@@ -312,6 +374,101 @@
         </div>
       </div>
     </section>
+
+
+
+
+    <section class="industry-section" id="industries">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Рішення для вашої галузі</div>
+          <h2>Оберіть напрямок — отримаєте рішення саме під ваш бізнес</h2>
+          <p>Кожна галузь має свої критичні лінії, ризики та вартість простою. Тому DOMINEX рахує ESS не “в середньому”, а під конкретний тип об’єкта.</p>
+        </div>
+
+        <div class="industry-grid">
+          <a class="industry-card" href="sto.html">
+            <strong>СТО</strong>
+            <span>Підйомники, компресори, освітлення, каса та запис клієнтів.</span>
+            <em>ESS для СТО →</em>
+          </a>
+          <a class="industry-card" href="warehouse.html">
+            <strong>Склади</strong>
+            <span>Холодильники, ворота, логістика, облік та збереження товару.</span>
+            <em>ESS для складів →</em>
+          </a>
+          <a class="industry-card" href="factory.html">
+            <strong>Виробництва</strong>
+            <span>Критичні лінії, автоматика, обладнання та захист від простоїв.</span>
+            <em>ESS для виробництва →</em>
+          </a>
+          <a class="industry-card" href="agro.html">
+            <strong>Агро</strong>
+            <span>Насоси, полив, вентиляція, зберігання та автономність господарства.</span>
+            <em>ESS для агро →</em>
+          </a>
+          <a class="industry-card" href="office.html">
+            <strong>Офіси</strong>
+            <span>Інтернет, сервери, CRM, робочі місця та комунікація з клієнтами.</span>
+            <em>ESS для офісів →</em>
+          </a>
+          <a class="industry-card" href="home.html">
+            <strong>Приватні об’єкти</strong>
+            <span>Котел, насоси, холодильник, інтернет, охорона та комфорт без відключень.</span>
+            <em>ESS для дому →</em>
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    
+
+
+    <section class="typical-section" id="typical">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Типові рішення DOMINEX</div>
+          <h2>Орієнтовні конфігурації ESS під різні задачі</h2>
+          <p>Це не готові “коробки”, а стартові діапазони для попереднього розрахунку. Точну потужність і ємність АКБ інженер підбирає після аналізу споживання та критичних навантажень.</p>
+        </div>
+
+        <div class="typical-grid">
+          <div class="typical-card">
+            <h3>СТО</h3>
+            <span class="typical-power">30–50 кВт</span>
+            <span class="typical-battery">АКБ 60–100 кВт·год</span>
+            <p>Для підйомників, компресорів, освітлення, каси, інтернету та критичних робочих зон.</p>
+          </div>
+
+          <div class="typical-card">
+            <h3>Склади</h3>
+            <span class="typical-power">50–100 кВт</span>
+            <span class="typical-battery">АКБ 100–200 кВт·год</span>
+            <p>Для резерву холодильного обладнання, воріт, освітлення, серверів, обліку та логістики.</p>
+          </div>
+
+          <div class="typical-card">
+            <h3>Виробництво</h3>
+            <span class="typical-power">100–500 кВт</span>
+            <span class="typical-battery">АКБ 200–1000 кВт·год</span>
+            <p>Для критичних виробничих ліній, автоматики, контролю процесів та зменшення простоїв.</p>
+          </div>
+
+          <div class="typical-card">
+            <h3>Агро</h3>
+            <span class="typical-power">50–250 кВт</span>
+            <span class="typical-battery">АКБ 100–500 кВт·год</span>
+            <p>Для насосів, поливу, вентиляції, зберігання, складів та автономності агрооб’єктів.</p>
+          </div>
+        </div>
+
+        <div class="typical-note">
+          Для приватних будинків і невеликих об’єктів рішення зазвичай розраховується окремо: від резерву котла, холодильника та інтернету до повної автономності будинку.
+        </div>
+      </div>
+    </section>
+
 
     <section>
       <div class="container">
@@ -389,53 +546,7 @@
         </div>
       </div>
     </section>
-
-
-    <section class="industry-section" id="industries">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-kicker">Рішення для вашої галузі</div>
-          <h2>Оберіть напрямок — отримаєте рішення саме під ваш бізнес</h2>
-          <p>Кожна галузь має свої критичні лінії, ризики та вартість простою. Тому DOMINEX рахує ESS не “в середньому”, а під конкретний тип об’єкта.</p>
-        </div>
-
-        <div class="industry-grid">
-          <a class="industry-card" href="sto.html">
-            <strong>СТО</strong>
-            <span>Підйомники, компресори, освітлення, каса та запис клієнтів.</span>
-            <em>ESS для СТО →</em>
-          </a>
-          <a class="industry-card" href="warehouse.html">
-            <strong>Склади</strong>
-            <span>Холодильники, ворота, логістика, облік та збереження товару.</span>
-            <em>ESS для складів →</em>
-          </a>
-          <a class="industry-card" href="factory.html">
-            <strong>Виробництва</strong>
-            <span>Критичні лінії, автоматика, обладнання та захист від простоїв.</span>
-            <em>ESS для виробництва →</em>
-          </a>
-          <a class="industry-card" href="agro.html">
-            <strong>Агро</strong>
-            <span>Насоси, полив, вентиляція, зберігання та автономність господарства.</span>
-            <em>ESS для агро →</em>
-          </a>
-          <a class="industry-card" href="office.html">
-            <strong>Офіси</strong>
-            <span>Інтернет, сервери, CRM, робочі місця та комунікація з клієнтами.</span>
-            <em>ESS для офісів →</em>
-          </a>
-          <a class="industry-card" href="home.html">
-            <strong>Приватні об’єкти</strong>
-            <span>Котел, насоси, холодильник, інтернет, охорона та комфорт без відключень.</span>
-            <em>ESS для дому →</em>
-          </a>
-        </div>
-      </div>
-    </section>
-
-
-    <section class="credit-section" id="credit">
+<section class="credit-section" id="credit">
       <div class="container">
         <div class="section-head">
           <div class="section-kicker">Кредитування</div>
