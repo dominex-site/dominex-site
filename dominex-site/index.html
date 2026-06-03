@@ -87,6 +87,56 @@
     .audience-grid{grid-template-columns:repeat(6,1fr)}
     .audience-item{text-align:center;padding:24px 14px;border-radius:20px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.08);color:var(--text);font-weight:800}
 
+
+    .industry-section {
+      background: #080808;
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+
+    .industry-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 34px;
+    }
+
+    .industry-card {
+      min-height: 150px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 26px;
+      border-radius: 26px;
+      border: 1px solid rgba(255,255,255,.1);
+      background: linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.025));
+      transition: .25s ease;
+    }
+
+    .industry-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(216,166,66,.45);
+      box-shadow: 0 0 28px rgba(216,166,66,.12);
+    }
+
+    .industry-card strong {
+      color: var(--text);
+      font-size: 23px;
+      line-height: 1.15;
+    }
+
+    .industry-card span {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .industry-card em {
+      color: var(--gold-light);
+      font-style: normal;
+      font-weight: 900;
+      font-size: 14px;
+    }
+
     .partners-section{background:#080808;border-top:1px solid rgba(255,255,255,.08)}
     .partners-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:36px}
     .partner-logo{min-height:110px;display:flex;align-items:center;justify-content:center;padding:22px;border-radius:24px;border:1px solid rgba(255,255,255,.08);background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));transition:.25s ease}
@@ -144,7 +194,7 @@
 
     @media(max-width:1100px){
       .nav-links{gap:16px;font-size:14px}.logo img{width:165px}
-      .business-benefits-grid,.benefits-grid,.partners-grid{grid-template-columns:repeat(2,1fr)}
+      .business-benefits-grid,.benefits-grid,.partners-grid,.industry-grid{grid-template-columns:repeat(2,1fr)}
       .credit-grid{grid-template-columns:1fr}.credit-card{grid-template-columns:.8fr 1.2fr}.credit-note{grid-template-columns:1fr;text-align:center}
       .audience-grid{grid-template-columns:repeat(3,1fr)}.hero-stats{grid-template-columns:repeat(2,1fr)}
     }
@@ -161,7 +211,7 @@
       .hero{padding-top:118px;min-height:auto}.hero-content{padding:70px 0 46px}
       .hero-fast{width:100%;justify-content:center;font-size:14px;padding:12px 16px;margin-bottom:28px}
       h1{font-size:clamp(38px,13vw,54px);letter-spacing:-1.5px}
-      .hero-stats,.problem-grid,.benefits-grid,.business-benefits-grid,.partners-grid,.credit-grid,.cases-grid,.steps-grid,.audience-grid,.lead-wrap{grid-template-columns:1fr}
+      .hero-stats,.problem-grid,.benefits-grid,.business-benefits-grid,.partners-grid,.industry-grid,.credit-grid,.cases-grid,.steps-grid,.audience-grid,.lead-wrap{grid-template-columns:1fr}
       section{padding:64px 0}.business-benefits{padding:56px 0}.case-card img{height:220px}
       .partner-logo{min-height:90px;padding:18px}.partner-logo img{max-height:42px}
       .credit-card{grid-template-columns:1fr;padding:22px}.credit-card img{height:220px}.credit-note{padding:22px;font-size:16px}.credit-note .btn{width:100%}
@@ -190,6 +240,8 @@
     <input type="text" name="name">
     <input type="tel" name="phone">
     <textarea name="message"></textarea>
+    <input type="hidden" name="source">
+    <input type="hidden" name="source">
   </form>
 
   <header class="topbar">
@@ -200,6 +252,7 @@
 
       <nav class="nav-links">
         <a href="#solutions">Рішення</a>
+        <a href="#industries">Галузі</a>
         <a href="#cases">Об’єкти</a>
         <a href="#process">Як працюємо</a>
         <a href="#credit">Кредитування</a>
@@ -337,6 +390,51 @@
       </div>
     </section>
 
+
+    <section class="industry-section" id="industries">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Рішення для вашої галузі</div>
+          <h2>Оберіть напрямок — отримаєте рішення саме під ваш бізнес</h2>
+          <p>Кожна галузь має свої критичні лінії, ризики та вартість простою. Тому DOMINEX рахує ESS не “в середньому”, а під конкретний тип об’єкта.</p>
+        </div>
+
+        <div class="industry-grid">
+          <a class="industry-card" href="sto.html">
+            <strong>СТО</strong>
+            <span>Підйомники, компресори, освітлення, каса та запис клієнтів.</span>
+            <em>ESS для СТО →</em>
+          </a>
+          <a class="industry-card" href="warehouse.html">
+            <strong>Склади</strong>
+            <span>Холодильники, ворота, логістика, облік та збереження товару.</span>
+            <em>ESS для складів →</em>
+          </a>
+          <a class="industry-card" href="factory.html">
+            <strong>Виробництва</strong>
+            <span>Критичні лінії, автоматика, обладнання та захист від простоїв.</span>
+            <em>ESS для виробництва →</em>
+          </a>
+          <a class="industry-card" href="agro.html">
+            <strong>Агро</strong>
+            <span>Насоси, полив, вентиляція, зберігання та автономність господарства.</span>
+            <em>ESS для агро →</em>
+          </a>
+          <a class="industry-card" href="office.html">
+            <strong>Офіси</strong>
+            <span>Інтернет, сервери, CRM, робочі місця та комунікація з клієнтами.</span>
+            <em>ESS для офісів →</em>
+          </a>
+          <a class="industry-card" href="home.html">
+            <strong>Приватні об’єкти</strong>
+            <span>Котел, насоси, холодильник, інтернет, охорона та комфорт без відключень.</span>
+            <em>ESS для дому →</em>
+          </a>
+        </div>
+      </div>
+    </section>
+
+
     <section class="credit-section" id="credit">
       <div class="container">
         <div class="section-head">
@@ -409,6 +507,7 @@
 
         <form class="lead-form" name="dominex-lead" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="submitNetlifyForm(event, this)">
           <input type="hidden" name="form-name" value="dominex-lead">
+          <input type="hidden" name="source" value="Main Website">
           <p style="display:none;"><label>Не заповнювати: <input name="bot-field"></label></p>
           <label for="name">Ім’я</label><input id="name" type="text" name="name" placeholder="Ваше ім’я" required>
           <label for="phone">Телефон</label><input id="phone" type="tel" name="phone" placeholder="+38 (___) ___ __ __" required>
@@ -445,6 +544,7 @@
       <p>Ми зв’яжемося з вами та підготуємо попередній розрахунок автономності та економії.</p>
       <form class="modal-form" name="dominex-callback" method="POST" data-netlify="true" netlify-honeypot="bot-field-modal" onsubmit="submitNetlifyForm(event, this)">
         <input type="hidden" name="form-name" value="dominex-callback">
+        <input type="hidden" name="source" value="Header Callback">
         <p style="display:none;"><label>Не заповнювати: <input name="bot-field-modal"></label></p>
         <label for="modal-name">Ім’я</label><input id="modal-name" type="text" name="name" placeholder="Ваше ім’я" required>
         <label for="modal-phone">Телефон</label><input id="modal-phone" type="tel" name="phone" placeholder="095 300 7 555" required>
