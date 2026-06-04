@@ -688,7 +688,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       const formData=new FormData(form);
       if(button){button.disabled=true;button.textContent='Відправляємо...'}
       fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:encodeFormData(formData)})
-      .then(function(){form.reset();alert('Заявку відправлено. Ми скоро зв’яжемося з вами.');if(form.classList.contains('modal-form'))closeLeadModal()})
+      .then(function(){window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'generate_lead',
+          form_name: form.getAttribute('name') || 'dominex-form',
+          page_url: window.location.href
+        });
+        form.reset();
+        alert('Заявку відправлено. Ми скоро зв’яжемося з вами.');
+        if(form.classList.contains('modal-form'))closeLeadModal()})
       .catch(function(){alert('Помилка відправки. Напишіть нам у Telegram, WhatsApp або Viber.')})
       .finally(function(){if(button){button.disabled=false;button.textContent=originalText}})
     }

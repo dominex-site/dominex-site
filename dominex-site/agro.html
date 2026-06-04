@@ -154,6 +154,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="float"><a href="tel:+380953007555">☎</a><a href="https://t.me/SolarClub_ua" target="_blank">TG</a><a href="https://wa.me/380953007555" target="_blank">WA</a></div>
 <script>
 function encodeFormData(data){return new URLSearchParams(data).toString()}
-function submitNetlifyForm(event,form){event.preventDefault();const b=form.querySelector('button');const t=b.textContent;b.disabled=true;b.textContent='Відправляємо...';fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:encodeFormData(new FormData(form))}).then(()=>{form.reset();alert('Заявку відправлено. Ми скоро зв’яжемося з вами.')}).catch(()=>alert('Помилка. Напишіть нам у Telegram.')).finally(()=>{b.disabled=false;b.textContent=t})}
+function submitNetlifyForm(event,form){event.preventDefault();const b=form.querySelector('button');const t=b.textContent;b.disabled=true;b.textContent='Відправляємо...';fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:encodeFormData(new FormData(form))}).then(()=>{window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+  event: 'generate_lead',
+  form_name: form.getAttribute('name') || 'dominex-form',
+  page_url: window.location.href
+});
+form.reset();
+alert('Заявку відправлено. Ми скоро зв’яжемося з вами.')}).catch(()=>alert('Помилка. Напишіть нам у Telegram.')).finally(()=>{b.disabled=false;b.textContent=t})}
 </script>
 </body></html>
