@@ -65,8 +65,8 @@ form .btn{width:100%}
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WPQJHFT8"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-<form name="dominex-agro" method="POST" data-netlify="true" hidden>
-<input type="hidden" name="form-name" value="dominex-agro">
+<form name="dominex-lead" method="POST" data-netlify="true" hidden>
+<input type="hidden" name="form-name" value="dominex-lead">
 <input name="name"><input name="phone"><textarea name="message"></textarea><input name="source">
 </form>
 
@@ -138,9 +138,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <h2>Отримайте розрахунок ESS під ваш об’єкт</h2>
 <p style="color:var(--muted);font-size:18px">Інженер DOMINEX зв’яжеться з вами, уточнить задачу та підготує попередній розрахунок.</p>
 </div>
-<form name="dominex-agro" method="POST" data-netlify="true" onsubmit="submitNetlifyForm(event,this)">
-<input type="hidden" name="form-name" value="dominex-agro">
+<form name="dominex-lead" method="POST" data-netlify="true" onsubmit="submitNetlifyForm(event,this)">
+<input type="hidden" name="form-name" value="dominex-lead">
 <input type="hidden" name="source" value="agro">
+<input type="hidden" name="page_url">
+<input type="hidden" name="page_title">
+<input type="hidden" name="utm_source">
+<input type="hidden" name="utm_medium">
+<input type="hidden" name="utm_campaign">
+<input type="hidden" name="utm_term">
+<input type="hidden" name="utm_content">
+<input type="hidden" name="referrer">
+<input type="hidden" name="device">
 <label>Ім’я</label><input name="name" required placeholder="Ваше ім’я">
 <label>Телефон</label><input name="phone" required placeholder="+38...">
 <label>Коментар</label><textarea name="message" placeholder="Коротко опишіть об’єкт"></textarea>
@@ -154,7 +163,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="float"><a href="tel:+380953007555">☎</a><a href="https://t.me/SolarClub_ua" target="_blank">TG</a><a href="https://wa.me/380953007555" target="_blank">WA</a></div>
 <script>
 function encodeFormData(data){return new URLSearchParams(data).toString()}
-function submitNetlifyForm(event,form){event.preventDefault();const b=form.querySelector('button');const t=b.textContent;b.disabled=true;b.textContent='Відправляємо...';fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:encodeFormData(new FormData(form))}).then(()=>{window.dataLayer = window.dataLayer || [];
+function fillLeadMeta(form){
+  const params=new URLSearchParams(window.location.search);
+  const set=(n,v)=>{const el=form.querySelector('[name="'+n+'"]'); if(el) el.value=v||''};
+  set('page_url', window.location.href);
+  set('page_title', document.title);
+  set('utm_source', params.get('utm_source'));
+  set('utm_medium', params.get('utm_medium'));
+  set('utm_campaign', params.get('utm_campaign'));
+  set('utm_term', params.get('utm_term'));
+  set('utm_content', params.get('utm_content'));
+  set('referrer', document.referrer);
+  set('device', /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)?'mobile':'desktop');
+}
+function submitNetlifyForm(event,form){event.preventDefault();fillLeadMeta(form);const b=form.querySelector('button');const t=b.textContent;b.disabled=true;b.textContent='Відправляємо...';fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:encodeFormData(new FormData(form))}).then(()=>{window.dataLayer = window.dataLayer || [];
 window.dataLayer.push({
   event: 'generate_lead',
   form_name: form.getAttribute('name') || 'dominex-form',
